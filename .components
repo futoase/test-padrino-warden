@@ -1,0 +1,10 @@
+---
+:orm: activerecord
+:test: rspec
+:mock: mocha
+:script: jquery
+:renderer: haml
+:stylesheet: sass
+:namespace: TestPadrinoWarden
+:migration_format: number
+:admin_renderer: haml

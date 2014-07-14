@@ -1,0 +1,29 @@
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'
+    = javascript_include_tag '//code.jquery.com/jquery-2.1.1.min.js'
+    = javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'
+    %title
+      Test - Padrino Warden -
+  %body
+    .navbar.navbar-default{ role: 'navigation' }
+      .container-fluid
+        .navbar-header
+          %a{ class: 'navbar-brand'}
+            Test - Padrino Warden -
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{ href: "#" }
+                - if authenticated?
+                  = "#{current_user.first.email} としてログイン"
+                - else
+                  ログインしてません...
+            - if authenticated?
+              %li
+                %a{ href: "/sessions/logout" }
+                  ログアウトする
+
+    = yield
+

@@ -1,0 +1,13 @@
+.container
+  %h1
+    login
+  
+  = form_tag('/sessions/login', id: 'sessions_login', method: 'post', role: 'form', role: 'form') do
+    .form-group
+      %label.label(for='email') Login
+      = text_field_tag :email, type: 'email', class: 'form-control', value: params[:email]
+    .form-group
+      %label.label(for='password') Password
+      = password_field_tag :password, class: 'form-control'
+
+    = submit_tag('Sign in', class: 'btn btn-default')
